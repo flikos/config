@@ -1,0 +1,21 @@
+Для публикации в Heroku проекта на Flask необходимо дополнительно:
+
+1. pip install gunicorn
+2. pip freeze requirements.txt
+3. echo web:gunicorn app:app>Procfile
+4. heroku login
+
+А вот дальше варианты расходятся.
+Похоже первый вариант, если нет гита,
+
+$ cd ab-fl-1
+$ git init
+$ heroku git:remote -a ab-fl-1
+
+а второй - если есть
+
+$ heroku git:clone -a ab-fl-1
+$ cd ab-fl-1
+$ git add .
+$ git commit -am "make it better"
+$ git push heroku master
